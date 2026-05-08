@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 15:34:57 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/07 10:53:13 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/08 09:46:16 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,8 +61,8 @@ ss = do sa and sb at the same time
 
 void	ss(t_stack **a, t_stack **b)
 {
-	sa(a);
-	sb(b);
+	swap(*a);
+	swap(*b);
 	write(1, "ss\n", 3);
 }
 
