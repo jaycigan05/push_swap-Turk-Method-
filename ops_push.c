@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 11:24:13 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/07 13:33:19 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/08 12:18:25 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,10 +22,10 @@ a = [3,2,1] b = [5,4]
 a = [2,1] b = [3,5,4]
 */
 
-static void push(t_stack **dst, t_stack **src)
+static void	push(t_stack **dst, t_stack **src)
 {
-	t_stack *node;
-	
+	t_stack	*node;
+
 	if (!src || !*src)
 		return ;
 	node = *src;
@@ -40,12 +40,12 @@ pa = push the top of B onto A, print "pa"
 
 void	pa(t_stack **a, t_stack **b)
 {
-	push(a,b);
+	push(a, b);
 	write(1, "pa\n", 3);
 }
 
 void	pb(t_stack **a, t_stack **b)
 {
-	push(b,a);
+	push(b, a);
 	write(1, "pb\n", 3);
 }
