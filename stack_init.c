@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 09:44:47 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/05 11:09:57 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/11 09:10:43 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -116,7 +116,8 @@ t_stack	*init_stack_a(int argc, char **argv)
 			last = ft_stacklast(a);
 			last->next = node;
 		}
-		assign_indexes(a);
-		return (a);
+		i++;
 	}
+	assign_indexes(a);
+	return (a);
 }
