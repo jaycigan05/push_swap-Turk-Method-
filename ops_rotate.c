@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 13:39:09 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/08 12:21:17 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/10 08:59:42 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,4 +53,14 @@ void	rb(t_stack **b)
 {
 	rotate(b);
 	write(1, "rb\n", 3);
+}
+
+/*
+rr = rotate A and B at the same time
+*/
+void	rr(t_stack **a, t_stack **b)
+{
+	rotate(a);
+	rotate(b);
+	write(1, "rr\n", 3);
 }

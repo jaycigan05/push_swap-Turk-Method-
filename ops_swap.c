@@ -6,22 +6,21 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/05 15:34:57 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/08 09:46:16 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/09 18:33:14 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/*
-SWAP = exchange the value of the top two nodes
-WHY swap value and index, why not pointer?
-value and index, you may store it in a temporary variable, 
-if changing pointer, which means will touch more than 3 pointers.
-[2] -> [1] -> [3]
-becomes....
-[1] -> [2] -> [3] (top 2 changed)
-*/
-
+/**
+ *SWAP = exchange the value of the top two nodes
+ * WHY swap value and index, why not pointer?
+ * value and index, you may store it in a temporary variable, 
+ * if changing pointer, which means will touch more than 3 pointers.
+ * [2] -> [1] -> [3]
+ * becomes....
+ * [1] -> [2] -> [3] (top 2 changed)
+ */
 static void	swap(t_stack *stack)
 {
 	int	tmp_val;
@@ -58,7 +57,6 @@ void	sb(t_stack **b)
 /*
 ss = do sa and sb at the same time
 */
-
 void	ss(t_stack **a, t_stack **b)
 {
 	swap(*a);

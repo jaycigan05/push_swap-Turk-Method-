@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 12:19:44 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/08 12:20:41 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/09 19:05:38 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,20 +41,8 @@ static void	reverse_rotate(t_stack **stack)
 }
 
 /*
-rr = rotate A and B at the same time
-*/
-
-void	rr(t_stack **a, t_stack **b)
-{
-	rotate(a);
-	rotate(b);
-	write(1, "rr\n", 3);
-}
-
-/*
 rra = reverse rotate A, print "rra"
 */
-
 void	rra(t_stack **a)
 {
 	reverse_rotate(a);
