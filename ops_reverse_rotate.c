@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/08 12:19:44 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/09 19:05:38 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/11 10:45:54 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ Step:
 - detach the last node(second_last->next = NULL)
 - put the old node on the top (*stack = old_last)
 */
-
 static void	reverse_rotate(t_stack **stack)
 {
 	t_stack	*last;
@@ -52,7 +51,6 @@ void	rra(t_stack **a)
 /*
 rrb = reverse rotate B, print "rrb"
 */
-
 void	rrb(t_stack **b)
 {
 	reverse_rotate(b);
@@ -62,7 +60,6 @@ void	rrb(t_stack **b)
 /*
 rrr = reverse rotate both A and B, print "rrr"
 */
-
 void	rrr(t_stack **a, t_stack **b)
 {
 	reverse_rotate(a);

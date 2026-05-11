@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/07 13:39:09 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/10 08:59:42 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/11 10:45:43 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ Step:
 -stack start at the second
 -go to the last node, attach the save top there
 */
-
 static void	rotate(t_stack **stack)
 {
 	t_stack	*top;
@@ -48,7 +47,6 @@ void	ra(t_stack **a)
 /*
 rb = rotate B up, print "rb"
 */
-
 void	rb(t_stack **b)
 {
 	rotate(b);

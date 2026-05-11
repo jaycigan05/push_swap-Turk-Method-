@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 19:26:04 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/02 13:03:46 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/11 10:46:55 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,49 +31,59 @@ typedef struct s_stack
 	struct s_stack	*next;
 }	t_stack;
 
-// stack_utils.c
+// stack_utils.c//
 t_stack	*ft_stacknew(int val);
 void	ft_stackadd_top(t_stack **stack, t_stack *node);
 int		ft_stacksize(t_stack *stack);
 t_stack	*ft_stacklast(t_stack *stack);
 void	ft_free(t_stack **stack);
 
-// stack_init.c
+// stack_init.c//
+void	ft_error(t_stack **a);
 t_stack	*init_stack_a(int argc, char **argv);
 
-// utils.c
+// utils.c//
 long	ft_atol(const char *str);
 int		is_valid_arg(char *str);
 int		has_duplicate(t_stack *stack, int val);
 int		is_sorted(t_stack *stack);
 int		ft_min_index(t_stack *stack);
 
-// error.c
-void	ft_error(t_stack **a);
-
-// ops_swap.c
+// ops_swap.c//
 void	sa(t_stack **a);
 void	sb(t_stack **b);
 void	ss(t_stack **a, t_stack **b);
 
-// ops_push.c
+// ops_push.c//
 void	pa(t_stack **a, t_stack **b);
 void	pb(t_stack **a, t_stack **b);
 
-// ops_rotate.c
+// ops_rotate.c//
 void	ra(t_stack **a);
 void	rb(t_stack **b);
 void	rr(t_stack **a, t_stack **b);
+
+// ops_reverse_rotate.c//
 void	rra(t_stack **a);
 void	rrb(t_stack **b);
 void	rrr(t_stack **a, t_stack **b);
 
-// sort_small.c
+// sort_small.c//
 void	sort_2(t_stack **a);
 void	sort_3(t_stack **a);
 void	sort_5(t_stack **a, t_stack **b);
 
-// sort_big.c
+// sb_calc_cost.c//
+int		cost_to_top(t_stack *stack, int target_index);
+int		calc_cost(int cb, int ca);
+int		find_cheapest(t_stack *a, t_stack *b);
+
+// sb_find_target.c//
+int		ft_abs(int n);
+void	find_target_small_case(int *target, t_stack *a, int *best);
+int		find_target(t_stack *a, int b_index);
+
+// sort_big.c//
 void	sort_big(t_stack **a, t_stack **b);
 
 #endif

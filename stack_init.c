@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 09:44:47 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/11 09:10:43 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/11 10:44:00 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ when found non-integer/ out of range/ duplicate
 ** exit = stop immediately of the whole programme 
 to prevent keep running
 */
-
 void	ft_error(t_stack **a)
 {
 	ft_free(a);
@@ -35,7 +34,6 @@ use bubble sort method.
 a = act as assigning index
 b = move to compare each with a and reset every round
 */
-
 static void	assign_indexes(t_stack *stack)
 {
 	t_stack	*a;
@@ -66,7 +64,6 @@ return valid int number
 
 **catch the return value when reuse the return value multiple times
 */
-
 static int	parse_one(char *arg, t_stack **a)
 {
 	long	num;
@@ -92,7 +89,6 @@ Process
 ** add the the bottom (ft_stacklast + last->next = node)
 make sure in order stack
 */
-
 t_stack	*init_stack_a(int argc, char **argv)
 {
 	t_stack	*a;

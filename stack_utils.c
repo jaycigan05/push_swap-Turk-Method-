@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/02 12:57:37 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/03 12:23:18 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/11 10:43:50 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,6 @@ next is NULL. (point to nothing at first)
 Returns NULL if malloc fails.
 ** dont need to check if !stack as node is new
 */
-
 t_stack	*ft_stacknew(int val)
 {
 	t_stack	*node;
@@ -47,7 +46,6 @@ The new node points to previous node,
 // want to change an `int`, Pass `int *`
 // want to change a pointer (t_stack *)? Pass (t_stack **)
 // want to change a double pointer? Pass (t_stack ***)
-
 void	ft_stackadd_top(t_stack **stack, t_stack *node)
 {
 	if (!stack || !node)
@@ -61,7 +59,6 @@ counthow many nodes are in the stack
 walk from top to bottom
 (access to next)
 */
-
 int	ft_stacksize(t_stack *stack)
 {
 	int	count;
@@ -79,7 +76,6 @@ int	ft_stacksize(t_stack *stack)
 Return a pointer to the LAST node (The bottom of the stack)
 used by rotate operations
 */
-
 t_stack	*ft_stacklast(t_stack *stack)
 {
 	if (!stack)
@@ -96,7 +92,6 @@ avoid dangling pointers (hold an address but has been freed)
 ** remember if the head is null (!*stack), which will lead to
 crash when tmp = (*stack)->next
 */
-
 void	ft_free(t_stack **stack)
 {
 	t_stack	*tmp;

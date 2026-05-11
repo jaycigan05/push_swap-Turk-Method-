@@ -6,11 +6,38 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/09 18:09:28 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/11 10:10:01 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/11 10:22:57 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
+
+/*
+splited function from @do_move
+*/
+static void	do_move_different_path(int *ca, int *cb, t_stack **a, t_stack **b)
+{
+	while (*cb > 0)
+	{
+		rb(b);
+		(*cb)--;
+	}
+	while (*cb < 0)
+	{
+		rrb(b);
+		(*cb)++;
+	}
+	while (*ca > 0)
+	{
+		ra(a);
+		(*ca)--;
+	}
+	while (*ca < 0)
+	{
+		rra(a);
+		(*ca)++;
+	}
+}
 
 /*
 Execute the cheapest move.
@@ -38,26 +65,7 @@ static void	do_move(t_stack **a, t_stack **b, int b_idx)
 		cb++;
 		ca++;
 	}
-	while (cb > 0)
-	{
-		rb(b);
-		cb--;
-	}
-	while (cb < 0)
-	{
-		rrb(b);
-		cb++;
-	}
-	while (ca > 0)
-	{
-		ra(a);
-		ca--;
-	}
-	while (ca < 0)
-	{
-		rra(a);
-		ca++;
-	}
+	do_move_different_path(&ca, &cb, a, b);
 	pa(a, b);
 }
 
@@ -76,7 +84,7 @@ static void	rotate_min_top(t_stack **a)
 		ra(a);
 		cost--;
 	}
-	while(cost < 0)
+	while (cost < 0)
 	{
 		rra(a);
 		cost++;
@@ -103,5 +111,5 @@ void	sort_big(t_stack **a, t_stack **b)
 	sort_3(a);
 	while (*b)
 		do_move(a, b, find_cheapest(*a, *b));
-	rotate_min_to_top(a);
+	rotate_min_top(a);
 }
