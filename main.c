@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 09:01:56 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/11 09:38:36 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/11 09:40:36 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,10 @@
 
 int	main(int argc, char **argv)
 {
-	t_stack *a;
-	t_stack *b;
-	int	size;
-	
+	t_stack	*a;
+	t_stack	*b;
+	int		size;
+
 	if (argc < 2)
 		return (0);
 	a = init_stack_a(argc, argv);
