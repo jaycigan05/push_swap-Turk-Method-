@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/04 09:44:47 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/11 10:44:00 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/20 17:50:01 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,6 +96,7 @@ t_stack	*init_stack_a(int argc, char **argv)
 	t_stack	*last;
 	int		i;
 
+	a = NULL;
 	i = 1;
 	while (i < argc)
 	{

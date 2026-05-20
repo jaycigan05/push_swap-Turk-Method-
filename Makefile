@@ -6,7 +6,7 @@
 #    By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/11 10:48:10 by jagan             #+#    #+#              #
-#    Updated: 2026/05/20 17:09:24 by jagan            ###   ########.fr        #
+#    Updated: 2026/05/20 17:15:45 by jagan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,6 +17,7 @@ RM = rm -f
 
 SRC = src/main.c \
 		src/ops_push.c \
+		src/ops_reverse_rotate.c \
 		src/ops_rotate.c \
 		src/ops_swap.c \
 		src/sb_calc_cost.c \

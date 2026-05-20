@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 12:34:26 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/03 13:57:00 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/20 17:51:08 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -90,7 +90,7 @@ return 1 if sorted, 0 if not
 
 int	is_sorted(t_stack *stack)
 {
-	while (stack)
+	while (stack && stack->next)
 	{
 		if (stack->val > stack->next->val)
 			return (0);
@@ -109,6 +109,8 @@ int	ft_min_index(t_stack *stack)
 {
 	int	min;
 
+	if (!stack)
+		return (-1);
 	min = stack->index;
 	while (stack)
 	{
