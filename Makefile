@@ -6,7 +6,7 @@
 #    By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/11 10:48:10 by jagan             #+#    #+#              #
-#    Updated: 2026/05/20 17:05:34 by jagan            ###   ########.fr        #
+#    Updated: 2026/05/20 17:09:24 by jagan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -15,21 +15,21 @@ CC = cc
 CFLAG = -Wall -Wextra -Werror
 RM = rm -f
 
-SRC = main.c \
-		ops_push.c \
-		ops_rotate.c \
-		ops_swap.c \
-		sb_calc_cost.c \
-		sb_find_target.c \
-		sort_big.c \
-		sort_small.c \
-		stack_init.c \
-		stack_utils.c \
-		utils.c
+SRC = src/main.c \
+		src/ops_push.c \
+		src/ops_rotate.c \
+		src/ops_swap.c \
+		src/sb_calc_cost.c \
+		src/sb_find_target.c \
+		src/sort_big.c \
+		src/sort_small.c \
+		src/stack_init.c \
+		src/stack_utils.c \
+		src/utils.c
 
 OBJ = $(SRC:%.c=%.o)
 
-%.o = %.c
+%.o : %.c
 	$(CC) $(CFLAG) -I. -c $< -o $@
 
 all : $(NAME)
