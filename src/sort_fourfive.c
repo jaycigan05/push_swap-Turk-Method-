@@ -6,9 +6,11 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 12:07:15 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/21 12:07:16 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/21 12:18:35 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "push_swap.h"
 
 /*
 rotate A until the node with target_index is at the top
