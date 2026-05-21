@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 09:44:47 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/21 09:42:10 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/21 11:53:01 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	ft_abs(int n)
 		return (-n);
 	return (n);
 }
+
 /**
 Find where in A a given B element (b_index) should be inderted
 
