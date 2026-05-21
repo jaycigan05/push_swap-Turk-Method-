@@ -27,6 +27,7 @@ The program works with two stacks — `a` and `b` — and a fixed set of 11 oper
 
 **Core capabilities:**
 - Parses and validates integer arguments (detects non-integers, duplicates, and overflow)
+- Handles both separate arguments (`3 1 2`) and quoted string arguments (`"3 1 2"`)
 - Normalizes values to indexes for efficient algorithm computation
 - Selects the optimal algorithm based on input size (2, 3, 4, 5, or large)
 - Implements the Turk algorithm for inputs larger than 5 elements
@@ -70,6 +71,9 @@ The Turk algorithm sorts stacks larger than 5 elements in the fewest operations:
 **Index normalisation:**
 Values are converted to ranks (0 = smallest, n-1 = largest) before sorting. This simplifies comparisons and avoids edge cases with large negative/positive values.
 
+**Successor-based insertion:**
+When inserting a B element into A, the algorithm rotates A until the successor (smallest element in A larger than the B element) is at the top, then pushes. This maintains A in correct sorted order throughout.
+
 ---
 
 ## 3. File Structure
@@ -83,6 +87,7 @@ push_swap/
     ├── stack_init.c          ← parse args, build stack A, assign indexes
     ├── stack_utils.c         ← new node, add top, size, last, free
     ├── utils.c               ← atol, is_valid_arg, has_duplicate, is_sorted
+    ├── ft_split.c            ← split string by spaces, handle quoted args
     ├── ops_swap.c            ← sa, sb, ss
     ├── ops_push.c            ← pa, pb
     ├── ops_rotate.c          ← ra, rb, rr
@@ -136,12 +141,16 @@ norminette src/*.c push_swap.h
 ## 5. Usage Examples
 
 ```bash
-# sort 5 numbers
-./push_swap 3 1 4 1 5
-# Error (duplicate)
-
-# sort valid numbers
+# sort numbers — separate arguments
 ./push_swap 3 1 2
+# ra
+
+# sort numbers — quoted string argument
+./push_swap "3 1 2"
+# ra
+
+# mixed: quoted and separate
+./push_swap "3 1" 2
 # ra
 
 # count operations
@@ -149,7 +158,7 @@ ARG="4 67 3 87 23"
 ./push_swap $ARG | wc -l
 # 9
 
-# verify correctness with checker
+# verify correctness with official checker
 ./push_swap $ARG | ./checker_OS $ARG
 # OK
 
@@ -159,16 +168,17 @@ ARG="4 67 3 87 23"
 # single number — prints nothing
 ./push_swap 42
 
-# error cases
-./push_swap 1 a 3        # Error — non-integer
-./push_swap 1 2 2        # Error — duplicate
-./push_swap 2147483648   # Error — exceeds INT_MAX
-./push_swap -2147483649  # Error — below INT_MIN
-./push_swap              # nothing — no arguments
-./push_swap ""           # Error — empty string
+# error cases — all print "Error" to stderr
+./push_swap 1 a 3        # non-integer
+./push_swap 1 2 2        # duplicate
+./push_swap 2147483648   # exceeds INT_MAX
+./push_swap -2147483649  # below INT_MIN
+./push_swap ""           # empty string
+./push_swap "   "        # whitespace only
+./push_swap              # no arguments — prints nothing
 ```
 
-### Automated testing
+<!-- ### Automated testing
 
 ```bash
 # run with provided test scripts
@@ -192,7 +202,7 @@ for i in {1..5}; do
     ./push_swap $ARG | ./checker_OS $ARG
     ./push_swap $ARG | wc -l
 done
-```
+``` -->
 
 ---
 
@@ -221,7 +231,7 @@ Performance achieved by this implementation:
 | Input size | Target | Achieved (avg) | Score |
 |------------|--------|----------------|-------|
 | 100 numbers | < 700 ops | ~583 ops | 5/5 ⭐⭐⭐⭐⭐ |
-| 500 numbers | < 5500 ops | ~5200 ops | 5/5 ⭐⭐⭐⭐⭐ |
+| 500 numbers | < 5500 ops | ~5197 ops | 5/5 ⭐⭐⭐⭐⭐ |
 
 ---
 
@@ -241,10 +251,11 @@ AI (Claude by Anthropic) was used throughout this project in the following ways:
 
 | Task | How AI helped |
 |------|--------------|
-| **Concept explanation** | Explained C concepts such as `*` vs `**` pointers, dangling pointers, `argv` structure, and when to use `static` |
+| **Concept explanation** | Explained C concepts such as `*` vs `**` pointers, dangling pointers, `argv` structure, `static` keyword, and when NULL checks are necessary |
 | **Error clarification** | Helped interpret compiler errors and segfault traces from AddressSanitizer output |
-| **Debugging** | Identified bugs such as the `is_sorted` missing `&& stack->next` guard, wrong `find_target` logic (predecessor vs successor), and stale `.o` files causing crashes |
+| **Debugging** | Identified bugs such as missing `&& stack->next` guard in `is_sorted`, wrong `find_target` logic (predecessor vs successor), stale `.o` files causing crashes, and `sort_4` missing from `main.c` |
 | **Test generation** | Generated shell test scripts (`test_push_swap.sh`, `test_push_swap_extra.sh`, `test_advanced.sh`, `test_leaks.sh`) covering error handling, identity tests, benchmarks, and memory leaks |
 | **Code review** | Reviewed function logic and pointed out norminette issues such as missing semicolons, wrong variable names, and 25-line function limit violations |
+| **String parsing** | Helped design `ft_split_space` to handle quoted string arguments like `"3 1 2"` in addition to separate arguments |
 
 All code was written, reviewed, and understood by the student. AI was used as a learning and debugging tool — not as a code generator. Every function in this project can be explained and justified by the author.
