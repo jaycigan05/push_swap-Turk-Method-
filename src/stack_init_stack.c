@@ -6,11 +6,11 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 12:12:37 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/21 12:13:04 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/21 12:19:27 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <push_swap.h>
+#include "push_swap.h"
 /*
 ** Build stack A from all command-line arguments.
 ** Each argv goes through ft_split_space so quoted strings
