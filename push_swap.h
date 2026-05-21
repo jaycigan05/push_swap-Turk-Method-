@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 19:26:04 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/21 11:15:47 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/21 12:24:48 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,6 +40,9 @@ void	ft_free(t_stack **stack);
 
 // stack_init.c//
 void	ft_error(t_stack **a);
+void	assign_indexes(t_stack *stack);
+void	add_token(char *token, t_stack **a);
+void	process_arg(char *arg, t_stack **a);
 t_stack	*init_stack_a(int argc, char **argv);
 
 // utils.c//

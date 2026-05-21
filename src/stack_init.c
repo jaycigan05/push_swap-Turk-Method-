@@ -19,7 +19,7 @@ void	ft_error(t_stack **a)
 	exit(1);
 }
 
-static void	assign_indexes(t_stack *stack)
+void	assign_indexes(t_stack *stack)
 {
 	t_stack	*a;
 	t_stack	*b;
@@ -41,7 +41,7 @@ static void	assign_indexes(t_stack *stack)
 	}
 }
 
-static int	parse_one(char *arg, t_stack **a)
+int	parse_one(char *arg, t_stack **a)
 {
 	long	num;
 
@@ -57,7 +57,7 @@ static int	parse_one(char *arg, t_stack **a)
 ** Add a single validated token to the bottom of the stack.
 ** Checks for duplicates before adding.
 */
-static void	add_token(char *token, t_stack **a)
+void	add_token(char *token, t_stack **a)
 {
 	t_stack	*node;
 	t_stack	*last;
@@ -82,7 +82,7 @@ static void	add_token(char *token, t_stack **a)
 ** Splits by spaces so both "3 1 2" and 3 1 2 work.
 ** Empty or whitespace-only strings trigger error.
 */
-static void	process_arg(char *arg, t_stack **a)
+void	process_arg(char *arg, t_stack **a)
 {
 	char	**tokens;
 	int		i;
