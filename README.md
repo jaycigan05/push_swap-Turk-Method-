@@ -84,7 +84,8 @@ push_swap/
 ├── push_swap.h               ← structs, prototypes, includes
 └── src/
     ├── main.c                ← entry point, argument handling, algorithm dispatch
-    ├── stack_init.c          ← parse args, build stack A, assign indexes
+    ├── stack_init.c          ← parse and validate arguments, assign indexes
+    ├── stack_init_stack.c    ← build stack A from validated tokens
     ├── stack_utils.c         ← new node, add top, size, last, free
     ├── utils.c               ← atol, is_valid_arg, has_duplicate, is_sorted
     ├── ft_split.c            ← split string by spaces, handle quoted args
@@ -92,7 +93,8 @@ push_swap/
     ├── ops_push.c            ← pa, pb
     ├── ops_rotate.c          ← ra, rb, rr
     ├── ops_reverse_rotate.c  ← rra, rrb, rrr
-    ├── sort_small.c          ← sort_2, sort_3, sort_4, sort_5
+    ├── sort_small.c          ← sort_2, sort_3
+    ├── sort_fourfive.c       ← sort_4, sort_5, rotate_to_top
     ├── sort_big.c            ← sort_big, do_move, rotate_min_top
     ├── sb_find_target.c      ← find_target, ft_abs
     └── sb_calc_cost.c        ← cost_to_top, calc_cost, find_cheapest
@@ -177,32 +179,6 @@ ARG="4 67 3 87 23"
 ./push_swap "   "        # whitespace only
 ./push_swap              # no arguments — prints nothing
 ```
-
-<!-- ### Automated testing
-
-```bash
-# run with provided test scripts
-chmod +x test_push_swap.sh test_push_swap_extra.sh test_advanced.sh test_leaks.sh
-
-./test_push_swap.sh        # main evaluation tests
-./test_push_swap_extra.sh  # edge case tests
-./test_advanced.sh         # stress and benchmark tests
-./test_leaks.sh            # valgrind memory leak tests
-
-# stress test 100 numbers (repeat 10 times)
-for i in {1..10}; do
-    ARG=$(shuf -i 0-1000 -n 100 | tr '\n' ' ')
-    ./push_swap $ARG | ./checker_OS $ARG
-    ./push_swap $ARG | wc -l
-done
-
-# stress test 500 numbers
-for i in {1..5}; do
-    ARG=$(shuf -i 0-10000 -n 500 | tr '\n' ' ')
-    ./push_swap $ARG | ./checker_OS $ARG
-    ./push_swap $ARG | wc -l
-done
-``` -->
 
 ---
 
