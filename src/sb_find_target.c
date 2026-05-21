@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 09:44:47 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/11 10:08:13 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/21 09:42:10 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,27 +25,6 @@ int	ft_abs(int n)
 		return (-n);
 	return (n);
 }
-
-/*
-spilted function from @find_target
-*/
-void	find_target_small_case(int *target, t_stack *a, int *best)
-{
-	t_stack	*tmp;
-
-	if (*target == -1)
-	{
-		tmp = a;
-		while (tmp)
-		{
-			if (tmp->index > *best)
-				*best = tmp->index;
-			tmp = tmp->next;
-		}
-		*target = *best;
-	}
-}
-
 /**
 Find where in A a given B element (b_index) should be inderted
 
@@ -63,22 +42,25 @@ target the maximum in A
 */
 int	find_target(t_stack *a, int b_index)
 {
-	int		target;
-	int		best;
 	t_stack	*tmp;
+	int		target;
+	int		min_idx;
 
 	target = -1;
-	best = -1;
+	min_idx = -1;
 	tmp = a;
 	while (tmp)
 	{
-		if (tmp->index < b_index && tmp->index > best)
+		if (min_idx == -1 || tmp->index < min_idx)
+			min_idx = tmp->index;
+		if (tmp->index > b_index)
 		{
-			best = tmp->index;
-			target = tmp->index;
+			if (target == -1 || tmp->index < target)
+				target = tmp->index;
 		}
 		tmp = tmp->next;
 	}
-	find_target_small_case(&target, a, &best);
+	if (target == -1)
+		target = min_idx;
 	return (target);
 }

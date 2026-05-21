@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/11 09:01:56 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/11 09:40:36 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/21 10:33:51 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ int	main(int argc, char **argv)
 		sort_2(&a);
 	else if (size == 3)
 		sort_3(&a);
+	else if (size == 4)
+		sort_4(&a, &b);
 	else if (size <= 5)
 		sort_5(&a, &b);
 	else if (size > 5)

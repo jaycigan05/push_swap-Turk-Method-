@@ -6,7 +6,7 @@
 #    By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/11 10:48:10 by jagan             #+#    #+#              #
-#    Updated: 2026/05/20 17:15:45 by jagan            ###   ########.fr        #
+#    Updated: 2026/05/21 11:20:43 by jagan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,8 @@ SRC = src/main.c \
 		src/sort_small.c \
 		src/stack_init.c \
 		src/stack_utils.c \
-		src/utils.c
+		src/utils.c \
+		src/ft_split.c \
 
 OBJ = $(SRC:%.c=%.o)
 

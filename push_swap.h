@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/04/30 19:26:04 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/11 10:46:55 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/21 11:15:47 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,6 +71,7 @@ void	rrr(t_stack **a, t_stack **b);
 // sort_small.c//
 void	sort_2(t_stack **a);
 void	sort_3(t_stack **a);
+void	sort_4(t_stack **a, t_stack **b);
 void	sort_5(t_stack **a, t_stack **b);
 
 // sb_calc_cost.c//
@@ -85,5 +86,9 @@ int		find_target(t_stack *a, int b_index);
 
 // sort_big.c//
 void	sort_big(t_stack **a, t_stack **b);
+
+// ft_split.c//
+char	**ft_split_space(char *s);
+void	ft_free_split(char **split);
 
 #endif
