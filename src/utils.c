@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/03 12:34:26 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/20 17:51:08 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/21 17:08:30 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,6 @@ convert a string to a long integer
 LONG (not int) so we can detect values outside of range
 handlle + || -
 */
-
 long	ft_atol(const char *str)
 {
 	long	result;
