@@ -6,7 +6,7 @@
 /*   By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/05/21 11:14:20 by jagan             #+#    #+#             */
-/*   Updated: 2026/05/21 11:14:38 by jagan            ###   ########.fr       */
+/*   Updated: 2026/05/21 12:05:37 by jagan            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -105,18 +105,10 @@ void	ft_free_split(char **split)
 **   "  1  2  3 " → ["1", "2", "3", NULL]
 **   "42"         → ["42", NULL]
 */
-char	**ft_split_space(char *s)
+static int	fill_words(char **result, char *s)
 {
-	char	**result;
-	int		words;
-	int		i;
+	int	i;
 
-	if (!s)
-		return (NULL);
-	words = count_words(s);
-	result = malloc(sizeof(char *) * (words + 1));
-	if (!result)
-		return (NULL);
 	i = 0;
 	while (*s)
 	{
@@ -127,14 +119,30 @@ char	**ft_split_space(char *s)
 		}
 		result[i] = get_word(s);
 		if (!result[i])
-		{
-			ft_free_split(result);
-			return (NULL);
-		}
+			return (0);
 		while (*s && *s != ' ')
 			s++;
 		i++;
 	}
 	result[i] = NULL;
+	return (1);
+}
+
+char	**ft_split_space(char *s)
+{
+	char	**result;
+	int		words;
+
+	if (!s)
+		return (NULL);
+	words = count_words(s);
+	result = malloc(sizeof(char *) * (words + 1));
+	if (!result)
+		return (NULL);
+	if (!fill_words(result, s))
+	{
+		ft_free_split(result);
+		return (NULL);
+	}
 	return (result);
 }
