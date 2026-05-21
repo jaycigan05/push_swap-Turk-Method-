@@ -6,7 +6,7 @@
 #    By: jagan <jagan@student.42kl.edu.my>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2026/05/11 10:48:10 by jagan             #+#    #+#              #
-#    Updated: 2026/05/21 11:20:43 by jagan            ###   ########.fr        #
+#    Updated: 2026/05/21 12:08:07 by jagan            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,7 @@ SRC = src/main.c \
 		src/sb_find_target.c \
 		src/sort_big.c \
 		src/sort_small.c \
+		src/sort_fourfive.c \
 		src/stack_init.c \
 		src/stack_utils.c \
 		src/utils.c \
